@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Kestrel Return-Risk Screen</title>
+<style>body{font-family:Segoe UI,Arial,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;color:#222}
+input,select{width:100%;padding:.4rem;margin:.2rem 0 .6rem;border:1px solid #bbb;border-radius:4px}
+button{background:#0b6;border:0;color:#fff;padding:.6rem 1.2rem;border-radius:4px;font-size:1rem;cursor:pointer}
+#out{margin-top:1.2rem;padding:1rem;border:1px solid #ccc;border-radius:6px;display:none}
+.hi{color:#b00}.med{color:#a60}.lo{color:#080}</style></head><body>
+<h2>Kestrel — Return-Risk Check (dispatch)</h2>
+<form id="f">
+<label>Order ID<input name="order_id" value="KO2610504"></label>
+<label>SKU<input name="sku" value="KH-RV-01"></label>
+<label>Customer ID<input name="customer_id" value="KC100001"></label>
+<label>Sales channel<select name="sales_channel"><option>app</option><option>web</option><option>marketplace</option><option>partner_outlet</option></select></label>
+<label>Payment mode<select name="payment_mode"><option>prepaid_upi</option><option>prepaid_card</option><option>cod</option><option>emi</option></select></label>
+<label>Order value (INR)<input name="order_value_inr" value="3499"></label>
+<label>Qty<input name="qty" value="1"></label>
+<label>Discount %<input name="discount_pct" value="10"></label>
+<label>Prior orders<input name="customer_prior_orders" value="2"></label>
+<label>Prior returns<input name="customer_prior_returns" value="1"></label>
+<label>Pincode<input name="delivery_pincode" value="411001"></label>
+<label>Gift?<select name="is_gift"><option>N</option><option>Y</option></select></label>
+<label>Placed at<input name="order_placed_at" value="2026-08-12 10:30"></label>
+<button type="submit">Score order</button></form>
+<div id="out"></div>
+<script>
+f.onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(f));
+const r=await fetch('/score',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+const j=await r.json();const o=document.getElementById('out');o.style.display='block';
+o.innerHTML=r.ok?`<b>Score:</b> ${j.score} <span class="${j.risk_band=='high'?'hi':j.risk_band=='medium'?'med':'lo'}">[${j.risk_band}]</span><br><b>Action:</b> ${j.recommended_action}<ul>${j.reasons.map(x=>`<li>${x}</li>`).join('')}</ul>`
+:`<span class="hi">Error: ${j.detail}</span>`;}</script></body></html>

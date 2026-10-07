@@ -1,0 +1,2 @@
+predict.py vs submitted predictions.csv: 2096 rows, max abs diff 0.00e+00
+service /score vs predict.py on 20 random records: max abs diff 0.00e+00
