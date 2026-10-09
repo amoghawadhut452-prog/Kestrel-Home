@@ -1,0 +1,7 @@
+NESTED REPORT-FOLD CROSSCHECK (Apr-Jun 2026, n=2126)
+n flagged: 578 (0.272); expected returns among flagged: 158.0
+net Rs/quarter @15%: 1,245
+net Rs/quarter @25%: 19,415
+net Rs/quarter @35%: 37,585
+break-even call effect: 14.3%
+AUC 0.7879 / PR 0.4153 / precision 0.273 / recall 0.645

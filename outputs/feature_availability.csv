@@ -1,0 +1,21 @@
+field,known_before_shipping,present_in_test,used_in_model,why
+order_id,Y,Y,Y,join key / output only
+order_placed_at,Y,Y,N,kept for forward-in-time split; not a model feature
+customer_id,Y,Y,Y,join key
+sku,Y,Y,Y,join key
+sales_channel,Y,Y,Y,dispatch-time order attribute
+payment_mode,Y,Y,Y,dispatch-time order attribute
+discount_pct,Y,Y,Y,dispatch-time order attribute
+qty,Y,Y,Y,dispatch-time order attribute
+order_value_inr,Y,Y,Y,fixed for Oct-2025 gateway x100
+promised_delivery_days,Y,Y,Y,dispatch-time attribute
+delivery_pincode,Y,Y,Y,000000 flag only
+is_gift,Y,Y,Y,dispatch-time attribute
+customer_prior_orders,Y,Y,Y,history known at dispatch
+customer_prior_returns,Y,Y,Y,history known at dispatch
+delivery_note,Y,Y,N,free text not used as a feature
+last_service_event_type,N,N,N,LEAKAGE: post-outcome event; null/excluded in test (train 100% predictive when REVERSE_PICKUP) -> dropped
+pickup_scheduled_at,N,N,N,LEAKAGE: from return logistics booking -> dropped
+source,Y,Y,N,dedupe key only; crm rows kept
+returned,Y(train),N,label,not in test
+city/state/shield_member/family/list_price/warranty,Y,Y,Y,1:1 joins from customers/products

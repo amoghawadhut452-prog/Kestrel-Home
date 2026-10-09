@@ -1,0 +1,92 @@
+{
+  "sales_channel": {
+    "app": [
+      0.341,
+      0.3483
+    ],
+    "marketplace": [
+      0.2731,
+      0.2772
+    ],
+    "partner_outlet": [
+      0.1225,
+      0.1283
+    ],
+    "web": [
+      0.2633,
+      0.2462
+    ]
+  },
+  "family": {
+    "Air Fryer": [
+      0.1443,
+      0.145
+    ],
+    "Ceiling Fan": [
+      0.1458,
+      0.1479
+    ],
+    "Induction Cooktop": [
+      0.1405,
+      0.1374
+    ],
+    "Mixer Grinder": [
+      0.1381,
+      0.1431
+    ],
+    "Robot Vacuum": [
+      0.1479,
+      0.145
+    ],
+    "Room Heater": [
+      0.1452,
+      0.1379
+    ],
+    "Water Purifier": [
+      0.1381,
+      0.1436
+    ]
+  },
+  "payment_mode": {
+    "cod": [
+      0.3001,
+      0.3073
+    ],
+    "emi": [
+      0.1217,
+      0.1088
+    ],
+    "prepaid_card": [
+      0.205,
+      0.2109
+    ],
+    "prepaid_upi": [
+      0.3733,
+      0.3731
+    ]
+  },
+  "price_median": [
+    4439.6,
+    4475.7
+  ],
+  "discount_median": [
+    8.0,
+    9.0
+  ],
+  "shield_share": [
+    0.2215,
+    0.2209
+  ],
+  "cod_share": [
+    0.3001,
+    0.3073
+  ],
+  "pincode000000_share": [
+    0.0807,
+    0.084
+  ],
+  "prior_returns_mean": [
+    0.182,
+    0.195
+  ]
+}
