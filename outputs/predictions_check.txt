@@ -1,9 +1,0 @@
-PASS rows == 2096
-PASS columns exactly [order_id, score]
-PASS order_id unique
-PASS id set matches test
-PASS no blanks/NaN
-PASS scores numeric in [0,1]
-PASS sample_submission schema match
-distinct scores: 2095
-constant: False
